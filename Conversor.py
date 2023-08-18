@@ -13,6 +13,9 @@ for filename in os.listdir(ruta_archivos):
 
 combinar_df = pd.concat(dataframes, ignore_index=True)
 
+#Ajuste para saltar lineas de espacio
+combinar_df = combinar_df.replace('\n', ' ', regex=True)
+
 combinar_csv_ruta = r'C:\Users\David Tabares\Documents\Conversion\Reto1\Archivo convertido\archivo_combinado.csv'
 
 combinar_df.to_csv(combinar_csv_ruta, index=False)
